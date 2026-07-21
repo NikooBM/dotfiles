@@ -1,0 +1,298 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "output": "HDMI-A-2",
+    "spacing": 0,
+
+    "modules-left":   ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right":  ["custom/clipboard", "pulseaudio", "network", "disk", "custom/gpu", "cpu", "memory", "tray"],
+
+    "hyprland/workspaces": {
+      "disable-scroll": false,
+      "all-outputs": false,
+      "on-click": "activate",
+      "on-scroll-up":   "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "format": "{name} {windows}",
+      "format-window-separator": " ",
+      "window-rewrite-default": "󰣆",
+      "window-rewrite": {
+
+        "class<vivaldi.*>":             "󰀂",
+        "class<firefox>":               "󰈹",
+        "class<chromium.*>":            "󰊯",
+        "class<brave-browser>":         "󰯉",
+        "class<org.mozilla.thunderbird>": "󰇮",
+
+        "class<kitty>":                 "󰄛",
+        "class<Alacritty>":             "󰆿",
+        "class<foot>":                  "󰆿",
+        "class<org.wezfurlong.wezterm>": "󰆿",
+
+        "class<code>":                 "󰨞",
+        "class<code-oss>":             "󰨞",
+        "class<neovide>":              "",
+        "class<nvim>":                 "",
+
+        "class<obsidian>":             "󱝁",
+        "class<logseq>":               "󱞁",
+
+        "class<thunar>":               "󰝰",
+        "class<nemo>":                 "󰝰",
+        "class<nautilus>":             "󰝰",
+        "class<org.gnome.Nautilus>":   "󰝰",
+        "class<dolphin>":              "󰝰",
+        "class<pcmanfm.*>":            "󰝰",
+
+        "class<libreoffice-calc>":     "󰈛",
+        "class<libreoffice-writer>":   "󰈙",
+        "class<libreoffice-impress>":  "󰈩",
+        "class<libreoffice-draw>":     "󰽉",
+        "class<libreoffice.*>":        "󰈙",
+
+        "class<steam>":                "󰓓",
+        "class<lutris>":               "󰺶",
+        "class<heroic>":               "󰺶",
+        "class<bottles>":              "󱡶",
+
+        "class<discord>":              "󰙯",
+        "class<telegram.*>":           "󰖻",
+        "class<signal>":               "󰍦",
+        "class<slack>":                "󰒱",
+        "class<zoom>":                 "󰍫",
+
+        "class<spotify>":              "󰓇",
+        "class<vlc>":                  "󰕼",
+        "class<mpv>":                  "󰎁",
+        "class<kdenlive>":             "󰨛",
+        "class<handbrake>":            "󰉔",
+
+        "class<gimp.*>":               "󰃣",
+        "class<inkscape>":             "󰕙",
+        "class<blender>":              "󰂫",
+        "class<krita>":                "󰃣",
+        "class<darktable>":            "󰄁",
+
+        "class<org.pwmt.zathura>":     "󰈦",
+        "class<evince>":               "󰈦",
+        "class<okular>":               "󰈦",
+
+        "class<eog>":                  "󰋩",
+        "class<shotwell>":             "󰋩",
+        "class<gwenview>":             "󰋩",
+        "class<org.gnome.eog>":        "󰋩",
+
+        "class<pavucontrol>":          "󰕾",
+        "class<blueman.*>":            "󰂯",
+        "class<nm-connection.*>":      "󰤨",
+
+        "class<org.keepassxc.KeePassXC>": "󰌾",
+        "class<bitwarden>":            "󰌾",
+
+        "class<virt-manager>":         "󰍜",
+        "class<org.virtualbox.*>":     "󰍻",
+
+        "class<org.qbittorrent.qBittorrent>": "󰄠",
+        "class<transmission-gtk>":     "󰄠",
+
+        "class<ark>":                  "󰛫",
+        "class<org.gnome.FileRoller>": "󰛫",
+
+        "class<flameshot>":            "󰹑",
+        "class<org.kde.spectacle>":    "󰹑",
+
+        "class<btop>":                 "󰓅",
+        "class<htop>":                 "󰓅",
+
+        "title<.*[Yy]ou[Tt]ube.*>":   "󰗃",
+        "title<.*[Gg]it[Hh]ub.*>":    "󰊤",
+        "title<.*[Tt]witch.*>":        "󰕃",
+        "title<.*[Nn]et[Ff]lix.*>":   "󰝆"
+      },
+      "persistent-workspaces": {
+        "HDMI-A-2": [1, 2, 3, 4, 5, 6]
+      }
+    },
+
+    "clock": {
+      "timezone": "Europe/Madrid",
+      "interval": 1,
+      "format": "  {:%H:%M    %a %d %b}",
+      "format-alt": "  {:%A, %d de %B de %Y  ·  %H:%M:%S}",
+      "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "month",
+        "on-scroll": 1,
+        "format": {
+          "months":   "<span color='#89b4fa'><b>{}</b></span>",
+          "weekdays": "<span color='#a6e3a1'><b>{}</b></span>",
+          "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
+        }
+      }
+    },
+
+    "cpu": {
+      "format": "󰍛 {usage}%",
+      "tooltip-format": "󰍛 CPU  {usage}%\n{avg_frequency} GHz",
+      "interval": 2,
+      "states": { "warning": 70, "critical": 90 }
+    },
+
+    "memory": {
+      "format": "󰾆 {used:.1f}G",
+      "tooltip-format": "󰾆 RAM  {used:.2f} / {total:.2f} GiB\n󰾅 Swap  {swapUsed:.2f} / {swapTotal:.2f} GiB",
+      "interval": 5,
+      "states": { "warning": 75, "critical": 90 }
+    },
+
+    "disk": {
+      "interval": 30,
+      "format": "󰋊 {percentage_used}%",
+      "path": "/",
+      "tooltip-format": "󰋊 Disco  {used} / {total}\n󰮁 Libre  {free}"
+    },
+
+    "custom/gpu": {
+      "exec": "~/.config/waybar/scripts/gpu-usage.sh",
+      "return-type": "json",
+      "interval": 3,
+      "tooltip": true
+    },
+
+    "network": {
+      "format-wifi":         "󰤨 {essid}",
+      "format-ethernet":     "󰈀 {ipaddr}",
+      "format-linked":       "󰈀 sin IP",
+      "format-disconnected": "󰤭 sin red",
+      "tooltip-format-wifi": "󰤨 {essid}  {signalStrength}%\n󰇚 {bandwidthDownBytes}/s  󰕒 {bandwidthUpBytes}/s",
+      "tooltip-format-ethernet": "󰈀 {ifname}  {ipaddr}\n󰇚 {bandwidthDownBytes}/s  󰕒 {bandwidthUpBytes}/s",
+      "on-click": "nm-connection-editor",
+      "interval": 5
+    },
+
+    "pulseaudio": {
+      "format":       "{icon} {volume}%",
+      "format-muted": "󰝟 mute",
+      "format-icons": {
+        "headphone": "󰋋",
+        "headset":   "󰋎",
+        "default":   ["󰕿", "󰖀", "󰕾"]
+      },
+      "scroll-step": 5,
+      "on-click": "pavucontrol",
+      "tooltip-format": "{desc}\n{volume}%"
+    },
+
+    "custom/clipboard": {
+      "format": "󰅇",
+      "tooltip": true,
+      "tooltip-format": "Portapapeles (click para abrir historial)",
+      "on-click": "~/.config/waybar/scripts/clipboard-menu.sh"
+    },
+
+    "tray": {
+      "icon-size": 15,
+      "spacing": 7,
+      "show-passive-items": true
+    }
+  },
+
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "output": "HDMI-A-1",
+    "spacing": 0,
+
+    "modules-left":   ["hyprland/workspaces"],
+    "modules-center": ["clock#s"],
+    "modules-right":  ["pulseaudio#s", "network#s", "custom/gpu#s", "cpu#s", "memory#s"],
+
+    "hyprland/workspaces": {
+      "disable-scroll": false,
+      "all-outputs": false,
+      "on-click": "activate",
+      "on-scroll-up":   "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "format": "{name} {windows}",
+      "format-window-separator": " ",
+      "window-rewrite-default": "󰣆",
+      "window-rewrite": {
+        "class<vivaldi.*>":     "󰀂",
+        "class<firefox>":       "󰈹",
+        "class<chromium.*>":    "󰊯",
+        "class<brave-browser>": "󰯉",
+        "class<kitty>":         "󰄛",
+        "class<Alacritty>":     "󰆿",
+        "class<foot>":          "󰆿",
+        "class<code>":         "󰨞",
+        "class<obsidian>":     "󱝁",
+        "class<thunar>":       "󰝰",
+        "class<nemo>":         "󰝰",
+        "class<nautilus>":     "󰝰",
+        "class<steam>":        "󰓓",
+        "class<lutris>":       "󰺶",
+        "class<discord>":      "󰙯",
+        "class<telegram.*>":   "󰖻",
+        "class<signal>":       "󰍦",
+        "class<spotify>":      "󰓇",
+        "class<vlc>":          "󰕼",
+        "class<mpv>":          "󰎁",
+        "class<kdenlive>":     "󰨛",
+        "title<.*[Yy]ou[Tt]ube.*>": "󰗃",
+        "title<.*[Gg]it[Hh]ub.*>":  "󰊤"
+      },
+      "persistent-workspaces": {
+        "HDMI-A-1": [7, 8, 9, 10]
+      }
+    },
+
+    "clock#s": {
+      "timezone": "Europe/Madrid",
+      "interval": 1,
+      "format": "  {:%H:%M  %a %d}",
+      "tooltip-format": "{:%A, %d de %B de %Y}"
+    },
+
+    "cpu#s": {
+      "format": "󰍛 {usage}%",
+      "tooltip-format": "󰍛 CPU  {usage}%",
+      "interval": 2,
+      "states": { "warning": 70, "critical": 90 }
+    },
+
+    "memory#s": {
+      "format": "󰾆 {used:.1f}G",
+      "tooltip-format": "󰾆 RAM  {used:.2f} / {total:.2f} GiB",
+      "interval": 5,
+      "states": { "warning": 75, "critical": 90 }
+    },
+
+    "custom/gpu#s": {
+      "exec": "~/.config/waybar/scripts/gpu-usage.sh",
+      "return-type": "json",
+      "interval": 3,
+      "tooltip": true
+    },
+
+    "network#s": {
+      "format-wifi":         "󰤨 {essid}",
+      "format-ethernet":     "󰈀 {ipaddr}",
+      "format-disconnected": "󰤭 sin red",
+      "interval": 10
+    },
+
+    "pulseaudio#s": {
+      "format":       "{icon} {volume}%",
+      "format-muted": "󰝟 mute",
+      "format-icons": {
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "scroll-step": 5,
+      "on-click": "pavucontrol"
+    }
+  }
+]

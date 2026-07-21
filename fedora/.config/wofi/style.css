@@ -1,0 +1,68 @@
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║                    WOFI STYLE                                ║
+   ║         Coloca en: ~/.config/wofi/style.css                  ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+
+window {
+    background-color: rgba(26, 27, 38, 0.96);
+    border: 2px solid rgba(76, 120, 153, 0.6);
+    border-radius: 12px;
+}
+
+#input {
+    background: rgba(255, 255, 255, 0.05);
+    color: #c0caf5;
+    border: 1px solid rgba(76, 120, 153, 0.4);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 10px;
+    font-family: "JetBrains Mono";
+    font-size: 14px;
+    outline: none;
+}
+
+#input:focus {
+    border-color: #4c7899;
+}
+
+#inner-box {
+    background: transparent;
+    margin: 0 6px 6px 6px;
+}
+
+#outer-box {
+    background: transparent;
+    padding: 0;
+}
+
+#scroll {
+    background: transparent;
+}
+
+#text {
+    color: #c0caf5;
+    padding: 4px 8px;
+    font-family: "JetBrains Mono";
+    font-size: 13px;
+}
+
+#entry {
+    background: transparent;
+    border-radius: 6px;
+    padding: 4px 6px;
+    margin: 1px 4px;
+    transition: all 0.15s ease;
+}
+
+#entry:selected {
+    background: rgba(76, 120, 153, 0.3);
+    border: 1px solid rgba(76, 120, 153, 0.5);
+}
+
+#entry:selected #text {
+    color: #ffffff;
+}
+
+image {
+    margin-right: 8px;
+}

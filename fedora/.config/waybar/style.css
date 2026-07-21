@@ -1,0 +1,160 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", "Symbols Nerd Font Mono", monospace;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: rgba(11, 12, 18, 0.97);
+    border-bottom: 1px solid rgba(50, 75, 100, 0.45);
+    color: #c0caf5;
+}
+
+/* ─── WORKSPACES ─────────────────────────────────── */
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #2e3355;
+    padding: 3px 9px;
+    margin: 3px 2px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.12s ease;
+    font-size: 11.5px;
+    min-width: 26px;
+}
+
+#workspaces button.nonempty {
+    color: #5c6492;
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.05);
+}
+
+#workspaces button.active {
+    background: rgba(30, 60, 92, 0.85);
+    color: #dde3ff;
+    border-color: rgba(76, 120, 153, 0.6);
+    font-weight: 600;
+}
+
+#workspaces button:hover {
+    background: rgba(76, 120, 153, 0.18);
+    color: #c0caf5;
+    border-color: rgba(76, 120, 153, 0.32);
+}
+
+#workspaces button.urgent {
+    background: rgba(120, 20, 20, 0.8);
+    color: #fff;
+    border-color: #f38ba8;
+    animation: blink 0.8s linear infinite;
+}
+
+/* ─── MÓDULOS GENÉRICOS ──────────────────────────── */
+#clock,
+#clock.s,
+#cpu,
+#cpu.s,
+#memory,
+#memory.s,
+#disk,
+#network,
+#network.s,
+#pulseaudio,
+#pulseaudio.s,
+#custom-gpu,
+#custom-gpu.s,
+#custom-clipboard,
+#tray {
+    padding: 3px 10px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.03);
+    transition: all 0.12s ease;
+}
+
+#clock:hover,
+#cpu:hover,
+#cpu.s:hover,
+#memory:hover,
+#memory.s:hover,
+#disk:hover,
+#network:hover,
+#network.s:hover,
+#pulseaudio:hover,
+#pulseaudio.s:hover,
+#custom-gpu:hover,
+#custom-gpu.s:hover,
+#custom-clipboard:hover {
+    background: rgba(76, 120, 153, 0.15);
+    color: #fff;
+    border-color: rgba(76, 120, 153, 0.3);
+}
+
+/* Reloj */
+#clock,
+#clock.s {
+    color: #89b4fa;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    background: rgba(90, 130, 200, 0.06);
+    border-color: rgba(90, 130, 200, 0.13);
+}
+
+/* CPU */
+#cpu, #cpu.s           { color: #a6e3a1; }
+#cpu.warning           { color: #f9e2af; }
+#cpu.critical          { color: #f38ba8; background: rgba(243,139,168,0.08); }
+
+/* RAM */
+#memory, #memory.s     { color: #f9e2af; }
+#memory.warning        { color: #fab387; }
+#memory.critical       { color: #f38ba8; background: rgba(243,139,168,0.08); }
+
+/* Disco */
+#disk                  { color: #89dceb; }
+
+/* GPU */
+#custom-gpu,
+#custom-gpu.s          { color: #cba6f7; }
+#custom-gpu.warning,
+#custom-gpu.s.warning  { color: #f9e2af; }
+#custom-gpu.critical,
+#custom-gpu.s.critical { color: #f38ba8; background: rgba(243,139,168,0.08); }
+
+/* Red */
+#network, #network.s           { color: #94e2d5; }
+#network.disconnected          { color: #f38ba8; background: rgba(243,139,168,0.08); }
+
+/* Audio */
+#pulseaudio, #pulseaudio.s     { color: #cba6f7; }
+#pulseaudio.muted              { color: #2a2d3e; font-style: italic; }
+
+/* Portapapeles */
+#custom-clipboard {
+    color: #89b4fa;
+    font-size: 11px;
+}
+
+/* Tray */
+#tray {
+    padding: 3px 9px;
+    margin: 4px 2px;
+}
+#tray > .passive         { -gtk-icon-effect: dim; }
+#tray > .needs-attention {
+    background: rgba(243,139,168,0.13);
+    border-color: rgba(243,139,168,0.25);
+}
+
+@keyframes blink {
+    to { opacity: 0.35; }
+}

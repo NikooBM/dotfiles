@@ -1,0 +1,45 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║                      MAKO CONFIG                             ║
+# ║         Coloca en: ~/.config/mako/config                     ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# Posición y tamaño
+# Posición
+anchor=top-right
+margin=10
+padding=12,16
+width=340
+layer=overlay
+
+# Tiempo por defecto (ms)
+default-timeout=5000
+
+# Fuente
+font=JetBrains Mono 12
+
+# Apariencia
+background-color=#1a1b26ee
+text-color=#c0caf5
+border-color=#4c7899
+border-size=2
+
+# Iconos
+icon-path=/usr/share/icons/Papirus-Dark:/usr/share/icons/hicolor
+max-icon-size=48
+
+# Máximo de notificaciones visibles
+max-visible=5
+
+# Urgencias
+[urgency=low]
+border-color=#565f89
+default-timeout=3000
+
+[urgency=normal]
+border-color=#4c7899
+default-timeout=5000
+
+[urgency=high]
+border-color=#ff5555
+background-color=#2d1b1bee
+default-timeout=0
